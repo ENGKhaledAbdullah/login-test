@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            
+        }
+        
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .login-form{
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .login-form form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-title{
+            margin: 0;
+        }
+
+        .login-subtitle{
+            margin: 5px 10px 20px 10px;
+            color: gray;
+        }
+
+        .form-input{
+            width: 100%;
+        
+            
+        }
+        
+        form .form-input input{
+            background-color: #f3f1ff;
+            border: none;
+            display: inline-block;
+            border-radius: 15px;
+            padding:10px 50px;
+            width: -webkit-fill-available;
+            height: 30px;
+        }
+
+        .form-input input::placeholder{
+            color: black;
+        }
+
+        .login-username::before{
+            content: url('./Vector.png');
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 45%;
+            left: 15px;
+        }
+
+        .login-password::before{
+            content: url('./Vector2.png');
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 45%;
+            left: 15px;
+        }
+
+        form input[type="submit"]{
+            background: linear-gradient(to right,#8878f3,#5c46ee);
+            color: white;
+            font-weight: bold;
+            padding: 15px 20px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.238);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .login-other-title{
+            text-align: center;
+            font-size: 1.2rem;
+            color: gray;
+        }
+
+        .login-other-title span{
+            font-weight: bold;
+            color: black;
+        }
+
+        .login-other-title span::before{
+            content: '';
+            display: block;
+            width: 50%;
+            height: 5px;
+            border-top: 1px solid rgba(128, 128, 128, 0.49);
+            position: relative;
+            top: 15px;
+            right: 80px;
+        }
+
+        .login-other-title::after{
+            content: '';
+            display: block;
+            width: 50%;
+            height: 5px;
+            border-top: 1px solid rgba(128, 128, 128, 0.49);
+            position: relative;
+            bottom: 12px;
+            left: 158px;
+        }
+
+        .login-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(128, 128, 128, 0.49);
+            height: 50px;
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 5px 20px;
+            text-align: center;
+            color: gray;
+        }
+
+        .login-button img{
+            width: 30px;
+            padding-right: 5px;
+        }
+
+        .login-button span{
+            font-weight: bold;
+            color: black;
+            padding-left: 5px;
+        }
+
+        .side-container{
+            background-color: #8878f3;
+            width: 50%;
+            height: 100vh;
+        }
+        
+        .side-container .background-img{
+            width: 100%;
+            height: 100vh;
+            background-image: url('./Rectangle\ 4.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .blur-card{
+            width: 60%;
+            height: 70vh;
+            background: linear-gradient(135deg ,rgba(255,255,255,0.1),rgba(255,255,255,0));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .blur-card::before{
+            content: url(./thunderbolt\ 1.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            position: relative;
+            top: 65%;
+            left: -30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .blur-card img{
+            position: absolute;
+            bottom: 0;
+            right: -100px;
+        }
+
+        .card-text{
+            width: 50%;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 30px;
+            line-height: 45px;
+            position: absolute;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <form action="#" method="post">
+                <h1 class="login-title">LOGIN</h1>
+                <p class="login-subtitle">How to i get started lorem ipsum dolor at?</p>
+                <div class="form-input login-username">
+                    <input type="text"  placeholder="Username" required>
+                </div>
+                <div class="form-input login-password">
+                    <input type="password" placeholder="Password" required >
+                </div>
+                <input type="submit" value="Login now">
+                <p class="login-other-title"><span>Login</span> with Others</p>
+                    <button class="login-button">
+                        <img src="./google 1.png" alt="">
+                        login with <span>google</span>
+                    </button>
+                    <button class="login-button">
+                        <img src="./facebook 1.png" alt="">
+                        login with <span>Facebook</span>
+                    </button>
+            </form>
+        </div>
+        <div class="side-container">
+            <div class="background-img">
+                <div class="blur-card">
+                    <p class="card-text">Very good works are waiting for you Login Now!!!</p>
+                    <img src="./women with tab 1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
